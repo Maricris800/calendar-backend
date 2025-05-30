@@ -41,7 +41,7 @@ const crearEvento = async(req, res = response ) => {
 const actualizarEvento = async(req, res = response ) => {
 
     const eventoId = req.params.id;
-    const uid = req.uid;
+    const uid = req.uid;    
 
     try {
 
@@ -57,7 +57,7 @@ const actualizarEvento = async(req, res = response ) => {
         if ( evento.user !== uid ) {
             return res.status(401).json({
                 ok: false,
-                msg: "No tiene privilegios para editar este evento",                
+                msg: "No tiene privilegios para actualizar este evento",                
             });
         }
 
